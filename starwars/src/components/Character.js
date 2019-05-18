@@ -8,7 +8,7 @@ const CharacterCardContainer = styled('div')`
 `;
 
 const NameContainer = styled('div')`
-  f2 pa2 mb2 bg-navy br2 lightest-blue
+  f2 pa2 mb2 bg-navy br2 light-blue
   shadow-1
 `;
 
