@@ -26,7 +26,6 @@ class App extends Component {
         return res.json();
       })
       .then(({ results, next, previous }) => {
-        console.log();
         this.setState({ starwarsChars: results, next, prev: previous });
       })
       .catch(err => {
