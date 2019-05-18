@@ -39,12 +39,16 @@ class App extends Component {
   getPrevious = () => this.getCharacters(this.state.prev);
 
   render() {
-    const { starwarsChars } = this.state;
+    const { starwarsChars, next, prev } = this.state;
     return (
       <div className="App">
         <h1 className="Header">React Wars</h1>
-        <button onClick={this.getPrevious}>Previous</button>
-        <button onClick={this.getNext}>Next</button>
+        <button disabled={prev ? false : true} onClick={this.getPrevious}>
+          Previous
+        </button>
+        <button disabled={next ? false : true} onClick={this.getNext}>
+          Next
+        </button>
         {starwarsChars.length > 0 ? (
           <CharacterList list={starwarsChars} />
         ) : (
