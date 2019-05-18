@@ -57,21 +57,17 @@ class App extends Component {
       <div className="App">
         <h1 className="Header">React Wars</h1>
         <AppContainer>
-          <PageButton
-            direction="left"
-            action={getPrevious}
-            active={prev ? true : false}
-          />
+          <PageButton action={getPrevious} active={prev ? true : false}>
+            {'<'}
+          </PageButton>
           {starwarsChars.length > 0 ? (
             <CharacterList list={starwarsChars} />
           ) : (
             <div>Loading...</div>
           )}
-          <PageButton
-            direction="right"
-            action={getNext}
-            active={next ? true : false}
-          />
+          <PageButton action={getNext} active={next ? true : false}>
+            {'>'}
+          </PageButton>
         </AppContainer>
       </div>
     );
