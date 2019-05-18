@@ -1,5 +1,13 @@
 import React from 'react';
 
-const CharacterList = props => <div />;
+import Character from './Character';
+
+const CharacterList = ({ list }) => (
+  <div>
+    {list.map(character => (
+      <Character />
+    ))}
+  </div>
+);
 
 export default CharacterList;
