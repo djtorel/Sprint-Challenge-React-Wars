@@ -4,7 +4,7 @@ import styled from 'tachyons-components';
 import Character from './Character';
 
 const CharacterListContainer = styled('div')`
-  flex flex-wrap justify-center
+  flex flex-wrap justify-center justify-around-l
 `;
 
 const CharacterList = ({ list }) => (

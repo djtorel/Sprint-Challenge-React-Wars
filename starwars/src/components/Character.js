@@ -2,12 +2,29 @@ import React from 'react';
 import styled from 'tachyons-components';
 
 const CharacterCardContainer = styled('div')`
-  flex flex-column w-80 pa3 justify-center
-  mb1 bg-light-red o-70 br3
+  flex flex-column w-80 pa2 justify-center
+  mb1 bg-light-blue o-80 br3 shadow-1
+  w-40-l
 `;
 
 const NameContainer = styled('div')`
-  f1 pa2 mb2 bg-purple br2 light-gray
+  f2 pa2 mb2 bg-navy br2 lightest-blue
+  shadow-1
+`;
+
+const StatContainer = styled('div')`
+  bg-dark-blue br2 pa2 lightest-blue
+  0-60
+`;
+
+const Stat = styled('div')`
+  flex items-center bg-blue f4 h3 br2
+  pa3 shadow-1
+  ${props => (props.last === 'true' ? 'mb0' : 'mb1')}
+`;
+
+const StatSplit = styled('span')`
+  flex w-50 justify-center
 `;
 
 const Character = ({
@@ -20,13 +37,23 @@ const Character = ({
 }) => (
   <CharacterCardContainer>
     <NameContainer>{name}</NameContainer>
-    <div>
-      <div>Birth Year: {birth_year}</div>
-      <div>Mass: {mass}</div>
-      <div>Hair Color: {hair_color}</div>
-      <div>Eye Color: {eye_color}</div>
-      <div>Skin Color: {skin_color}</div>
-    </div>
+    <StatContainer>
+      <Stat>
+        <StatSplit>Birth Year:</StatSplit> <StatSplit>{birth_year}</StatSplit>
+      </Stat>
+      <Stat>
+        <StatSplit>Mass:</StatSplit> <StatSplit>{mass}</StatSplit>
+      </Stat>
+      <Stat>
+        <StatSplit>Hair Color:</StatSplit> <StatSplit>{hair_color}</StatSplit>
+      </Stat>
+      <Stat>
+        <StatSplit>Eye Color:</StatSplit> <StatSplit>{eye_color}</StatSplit>
+      </Stat>
+      <Stat last="true">
+        <StatSplit>Skin Color:</StatSplit> <StatSplit>{skin_color}</StatSplit>
+      </Stat>
+    </StatContainer>
   </CharacterCardContainer>
 );
 
