@@ -1,9 +1,14 @@
 import React from 'react';
+import styled from 'tachyons-components';
 
 import Character from './Character';
 
+const CharacterListContainer = styled('div')`
+  flex flex-wrap justify-center
+`;
+
 const CharacterList = ({ list }) => (
-  <div>
+  <CharacterListContainer>
     {list.map(
       ({
         created,
@@ -25,7 +30,7 @@ const CharacterList = ({ list }) => (
         />
       )
     )}
-  </div>
+  </CharacterListContainer>
 );
 
 export default CharacterList;

@@ -1,4 +1,11 @@
 import React from 'react';
+import styled from 'tachyons-components';
+
+const CharacterCardContainer = styled('div')`
+  flex flex-column w-80 pa3 justify-center
+  mb1
+  bg-light-red o-70
+`;
 
 const Character = ({
   name,
@@ -8,7 +15,7 @@ const Character = ({
   eye_color,
   skin_color,
 }) => (
-  <div>
+  <CharacterCardContainer>
     <div>{name}</div>
     <div>
       <div>Birth Year: {birth_year}</div>
@@ -17,7 +24,7 @@ const Character = ({
       <div>Eye Color: {eye_color}</div>
       <div>Skin Color: {skin_color}</div>
     </div>
-  </div>
+  </CharacterCardContainer>
 );
 
 export default Character;
