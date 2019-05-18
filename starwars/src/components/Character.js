@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'tachyons-components';
 
 const CharacterCardContainer = styled('div')`
-  flex flex-column w-80 pa2 justify-center
+  flex flex-column w-75 w-80-ns pa2 justify-center
   mb1 bg-light-blue o-80 br3 shadow-1
   w-40-l
 `;

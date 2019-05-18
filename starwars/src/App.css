@@ -9,3 +9,15 @@
 * {
   box-sizing: border-box;
 }
+
+.fixed {
+  top: 40%;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: auto;
+}

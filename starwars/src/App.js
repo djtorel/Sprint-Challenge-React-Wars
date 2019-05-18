@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
-import './App.css';
+import styled from 'tachyons-components';
 
+import './App.css';
 import CharacterList from './components/CharacterList';
+import PageButton from './components/PageButton';
+
+const AppContainer = styled('div')`
+  flex
+`;
 
 class App extends Component {
   constructor() {
@@ -15,6 +21,10 @@ class App extends Component {
 
   componentDidMount() {
     this.getCharacters('https://swapi.co/api/people/');
+  }
+
+  componentDidUpdate() {
+    window.scrollTo(0, 0);
   }
 
   getCharacters = URL => {
@@ -38,21 +48,31 @@ class App extends Component {
   getPrevious = () => this.getCharacters(this.state.prev);
 
   render() {
-    const { starwarsChars, next, prev } = this.state;
+    const {
+      state: { starwarsChars, next, prev },
+      getNext,
+      getPrevious,
+    } = this;
     return (
       <div className="App">
         <h1 className="Header">React Wars</h1>
-        <button disabled={prev ? false : true} onClick={this.getPrevious}>
-          Previous
-        </button>
-        <button disabled={next ? false : true} onClick={this.getNext}>
-          Next
-        </button>
-        {starwarsChars.length > 0 ? (
-          <CharacterList list={starwarsChars} />
-        ) : (
-          <div>Loading...</div>
-        )}
+        <AppContainer>
+          <PageButton
+            direction="left"
+            action={getPrevious}
+            active={prev ? true : false}
+          />
+          {starwarsChars.length > 0 ? (
+            <CharacterList list={starwarsChars} />
+          ) : (
+            <div>Loading...</div>
+          )}
+          <PageButton
+            direction="right"
+            action={getNext}
+            active={next ? true : false}
+          />
+        </AppContainer>
       </div>
     );
   }
