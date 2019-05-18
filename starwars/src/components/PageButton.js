@@ -7,7 +7,7 @@ const ButtonContainer = styled('div')`
 `;
 
 const Button = styled('button')`
-  h5 bg-navy bn light-blue w2-m f4 f1-l pa2
+  h5 bg-navy bn light-blue f4 f2-l f2-m pa2
   shadow-1 br2
   ${({ disabled }) => (disabled ? 'o-30' : 'o-80')}
 `;

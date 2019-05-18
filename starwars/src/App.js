@@ -6,7 +6,7 @@ import CharacterList from './components/CharacterList';
 import PageButton from './components/PageButton';
 
 const AppContainer = styled('div')`
-  flex
+  flex pa4-l p1
 `;
 
 class App extends Component {
