@@ -3,8 +3,11 @@ import styled from 'tachyons-components';
 
 const CharacterCardContainer = styled('div')`
   flex flex-column w-80 pa3 justify-center
-  mb1
-  bg-light-red o-70
+  mb1 bg-light-red o-70 br3
+`;
+
+const NameContainer = styled('div')`
+  f1 pa2 mb2 bg-purple br2 light-gray
 `;
 
 const Character = ({
@@ -16,7 +19,7 @@ const Character = ({
   skin_color,
 }) => (
   <CharacterCardContainer>
-    <div>{name}</div>
+    <NameContainer>{name}</NameContainer>
     <div>
       <div>Birth Year: {birth_year}</div>
       <div>Mass: {mass}</div>
