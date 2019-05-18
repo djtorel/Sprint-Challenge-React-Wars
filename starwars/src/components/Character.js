@@ -20,7 +20,7 @@ const StatContainer = styled('div')`
 const Stat = styled('div')`
   flex items-center bg-blue f4 h3 br2
   pa3 shadow-1
-  ${props => (props.last === 'true' ? 'mb0' : 'mb1')}
+  ${({ last }) => (last ? 'mb0' : 'mb1')}
 `;
 
 const StatSplit = styled('span')`

@@ -32,11 +32,12 @@ class App extends Component {
   };
 
   render() {
+    const { starwarsChars } = this.state;
     return (
       <div className="App">
         <h1 className="Header">React Wars</h1>
-        {this.state.starwarsChars.length > 0 ? (
-          <CharacterList list={this.state.starwarsChars} />
+        {starwarsChars.length > 0 ? (
+          <CharacterList list={starwarsChars} />
         ) : (
           <div>Loading...</div>
         )}
