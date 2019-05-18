@@ -3,7 +3,7 @@ import styled from 'tachyons-components';
 
 const ButtonContainer = styled('div')`
   fixed ma2
-  ${({ direction }) => (direction === '<' ? 'left-0' : 'right-0')}
+  ${({ direction }) => (direction === 'left' ? 'left-0' : 'right-0')}
 `;
 
 const Button = styled('button')`
@@ -12,10 +12,10 @@ const Button = styled('button')`
   ${({ disabled }) => (disabled ? 'o-30' : 'o-80')}
 `;
 
-const PageButton = ({ children, action, active }) => (
-  <ButtonContainer direction={children}>
+const PageButton = ({ direction, action, active }) => (
+  <ButtonContainer direction={direction}>
     <Button disabled={!active} onClick={action}>
-      {children}
+      {direction === 'left' ? '<' : '>'}
     </Button>
   </ButtonContainer>
 );
