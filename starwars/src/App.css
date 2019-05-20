@@ -6,3 +6,18 @@
   text-shadow: 1px 1px 5px #fff;
 }
 /* write your parent styles in here for your App.js */
+* {
+  box-sizing: border-box;
+}
+
+.fixed {
+  top: 40%;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: auto;
+}
